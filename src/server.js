@@ -21,7 +21,7 @@ const server = http.createServer(async (req, res) => {
 
         //console.log(extractQueryParams(routeParams.groups.query))
         if (method === 'POST') {
-            const records = []//await processFile();
+            const records = await processFile();
             if (records.length > 0) {
                 return route.handler(req, res, records);
             }
